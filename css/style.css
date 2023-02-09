@@ -67,14 +67,20 @@ section button:hover {
     margin-top: 40px;
 }
 
+
 #image .card-pokemon {
     display: flex;
-    flex-direction: column;
     gap: 5px;
     border: 1px solid var(--border-color-card);
     background-color: var(--background-card);
     opacity: 0.7;
     padding: 20px;
+}
+
+.about-card {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 #image .card-pokemon:hover {
