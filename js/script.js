@@ -31,19 +31,21 @@ function randomPokemon() {
 
 
 
-
+var i = 1
 document.querySelector("#btn").addEventListener("click", () => {
   randomPokemon()
   btnCard.classList.remove("altura")
   btnPlus.classList.remove("btn-none")
   btnPlusMinus.setAttribute("src", "./assets/plus.svg")
+  if (i == 2){
+    i--
+  }
 })
 
 const btnCard = document.querySelector("#btn-card")
 const btnPlus = document.querySelector("#btn-card")
 const btnPlusMinus = document.querySelector("#btn-card button img")
 
-var i = 1
 function plusCard() {
   btnPlusMinus.setAttribute("src", "./assets/minus.svg")
   btnCard.classList.toggle("altura")
