@@ -1,6 +1,6 @@
 function randomPokemon() {
-  var amountPokemon = 1008
-  var pokemonRandom = Math.floor(Math.random() * amountPokemon + 1)
+  var idPokemon = 1008
+  var pokemonRandom = Math.floor(Math.random() * idPokemon + 1)
 
   const url = `https://pokeapi.co/api/v2/pokemon/${pokemonRandom}`
 
@@ -29,6 +29,35 @@ function randomPokemon() {
     })
 }
 
+
+
+
 document.querySelector("#btn").addEventListener("click", () => {
   randomPokemon()
+  btnCard.classList.remove("altura")
+  btnPlus.classList.remove("btn-none")
+  btnPlusMinus.setAttribute("src", "./assets/plus.svg")
 })
+
+const btnCard = document.querySelector("#btn-card")
+const btnPlus = document.querySelector("#btn-card")
+const btnPlusMinus = document.querySelector("#btn-card button img")
+
+var i = 1
+function plusCard() {
+  btnPlusMinus.setAttribute("src", "./assets/minus.svg")
+  btnCard.classList.toggle("altura")
+  if(i == 1){
+    btnPlusMinus.setAttribute("src", "./assets/minus.svg")
+    i++
+  }else {
+    btnPlusMinus.setAttribute("src", "./assets/plus.svg")
+    i--
+  }
+}
+
+btnCard.addEventListener("click", () => {
+  plusCard()
+})
+
+

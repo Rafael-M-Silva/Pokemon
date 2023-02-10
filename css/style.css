@@ -1,7 +1,7 @@
 :root {
     --background-primary: #141414;
     --color-primary: #e2e1e1;
-    --background-card: #2b2b2b;
+    --background-card: #2b2b2b8f;
     --border-color-card: #ffffff3f;
 }
 
@@ -19,10 +19,12 @@ html, body {
 
 body {
     width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    background: var(--background-primary);
     color: var(--color-primary);
+    background-image: url(../img/grid.png); /* grid DevMidia */
+    background-color: var(--background-primary);
 }
 
 header {
@@ -39,6 +41,10 @@ main {
     flex: 1 0 auto; /* | flex grow = trabalha na altura | flex shrink = define a proporção com que um item deve encolher caso seja necessário | flex basis = define o tamanho inicial dos elementos, em unidades de pixel, antes que o espaço remanescente seja redistribuído*/
 }
 
+main section a {
+    color: var(--color-primary);
+}
+
 section {
     max-width: 600px;
     text-align: justify;
@@ -47,6 +53,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    line-height: 1.5;
 }
 
 section button {
@@ -63,29 +70,80 @@ section button:hover {
     cursor: pointer;
 }
 
-#image {
-    margin-top: 40px;
-}
-
 
 #image .card-pokemon {
     display: flex;
-    gap: 5px;
+    justify-content: space-evenly;
     border: 1px solid var(--border-color-card);
     background-color: var(--background-card);
     opacity: 0.7;
-    padding: 20px;
 }
 
 .about-card {
+    width: 200px;
     display: flex;
     flex-direction: column;
     gap: 5px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.btn-none {
+    display: none;
 }
 
 #image .card-pokemon:hover {
     opacity: 1;
-    cursor: pointer;
+}
+
+#btn-card {
+    padding-top: 30px;
+}
+
+#btn-card button {
+    background: transparent;
+    color: #fff;
+    border: var(--border-color-card) 1px solid;
+    border-radius: 2px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#btn-card button:hover {
+    background: var(--background-primary);
+}
+
+#btn-card img {
+    width: 10px;
+    
+}
+
+#id {
+    opacity: 0.4;
+}
+
+.card-pokemon div:nth-child(1) img {
+    width: 100%;
+    height: 100px;
+    opacity: 0.6;
+}
+
+.altura {
+    height: 250px;
+    animation: transition 1s;
+    display: flex;
+}
+
+@keyframes transition {
+    0% {
+        height: 100px;
+    }
+
+    100%{
+        height: 250px;
+    }
 }
 
 footer {
